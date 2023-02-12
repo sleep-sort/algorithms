@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.time.*;
 import java.lang.*;
 
-class Main {
+class program2 {
   public static int NPlus1 = 550001;
   public static int REGULAR_N = 550000; 
 

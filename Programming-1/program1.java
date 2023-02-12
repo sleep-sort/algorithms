@@ -1,6 +1,6 @@
 import java.io.*;
 
-class Main {
+class program1 {
   public static void main(String[] args) {
     collectData();
 
