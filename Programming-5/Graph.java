@@ -161,7 +161,7 @@ public void bellmanFord() {
     }
 
     try {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("outputShortestPaths.txt"));
 
         for (Node node : nodes.values()) {
             if (node == originNode) {
