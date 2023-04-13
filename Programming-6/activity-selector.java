@@ -40,26 +40,19 @@ public class Main {
         }
     }
 
-    static List<Integer> recursiveActivitySelector(int[] s, int[] f, int i, int j) {
-        List<Integer> selectedActivities = new ArrayList<>();
-        selectedActivities.add(i);
-        int k = i;
-
-        for (int m = i + 1; m <= j; m++) {
-            if (s[m] >= f[k]) {
-                selectedActivities.add(m);
-                k = m;
-            }
-        }
-
-        List<Integer> result = new ArrayList<>();
-        for (int index : selectedActivities) {
-            if (index >= 0 && index < activityIndices.length) {
-                result.add(activityIndices[index]);
-            }
-        }
-        return result;
+public static List<Integer> recursiveActivitySelector(int[] s, int[] f, int i, int j) {
+    if (i >= j) {
+        return new ArrayList<>();
     }
+    int k = i + 1;
+    while (k < j && s[k] < f[i]) {
+        k++;
+    }
+    List<Integer> result = recursiveActivitySelector(s, f, k, j);
+    result.add(0, k);
+    return result;
+}
+
 
     public static List<Integer> greedyActivitySelector(int[] s, int[] f) {
         List<Integer> selectedActivities = new ArrayList<Integer>();
